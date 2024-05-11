@@ -3,11 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonas Riensema</title>
-    <link rel="stylesheet" href="style.css">
+    <title>ESP8266 IP Display</title>
 </head>
 <body>
-    <h2>HTML Image</h2>
-    <img src="pictures/test foto.png" alt="this is a test picture">
+    <h1>ESP8266 IP Display</h1>
+    <p>The IP address of your ESP8266 is: <span id="ipAddress">Fetching IP...</span></p>
+
+    <script>
+        function fetchESP8266IP() {
+            fetch('http://YOUR_ESP8266_IP_ADDRESS/getip', { method: 'GET' })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(ipAddress => {
+                    console.log('ESP8266 IP address:', ipAddress);
+                    document.getElementById('ipAddress').innerText = ipAddress;
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        }
+
+        // Fetch the ESP8266 IP address when the page loads
+        fetchESP8266IP();
+    </script>
 </body>
 </html>
