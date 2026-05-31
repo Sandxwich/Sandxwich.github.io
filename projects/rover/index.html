@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Project details for Line-Following Rover." />
+  <title>Line-Following Rover | Sandxwich</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="terminal-shell">
+    <header class="topbar">
+      <div class="terminal-title">Sandxwich OS • Project 02</div>
+      <div class="topbar-actions">
+        <nav class="nav-links" id="navLinks">
+          <a href="index.html#about">about</a>
+          <a href="index.html#projects">projects</a>
+          <a href="index.html#skills">skills</a>
+          <a href="index.html#contact">contact</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀️</button>
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+      </div>
+    </header>
+
+    <main class="terminal-body">
+      <div class="terminal-line command-line">
+        <span class="prompt">user@sandxwich:~/projects/rover$</span>
+        <span class="typed">cat details.txt</span>
+      </div>
+      <div class="terminal-output">
+        <p>Line-Following Rover — autonomous robot using IR sensors and PID control for precise track navigation.</p>
+      </div>
+
+      <section class="terminal-block">
+        <div class="terminal-block-title">summary</div>
+        <div class="terminal-line">A compact rover platform that follows contrast lines and responds to course commands reliably.</div>
+        <div class="terminal-line">I built the embedded control, sensor integration, and PCB wiring for the drive electronics.</div>
+      </section>
+
+      <section class="terminal-block">
+        <div class="terminal-block-title">hardware preview</div>
+        <div class="hardware-preview">
+          <div class="board">
+            <div class="component">MCU</div>
+            <div class="component">IR Sensors</div>
+            <div class="component">Motor Driver</div>
+            <div class="component">Battery</div>
+            <div class="component">Wheel Motors</div>
+            <div class="component">Power Regulator</div>
+            <div class="component">Signal LED</div>
+            <div class="component">Header Pins</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="terminal-block">
+        <div class="terminal-block-title">details</div>
+        <div class="terminal-line">Role: sensor integration, control algorithms, and physical hardware design.</div>
+        <div class="terminal-line">Tech: AVR/C, PID loop tuning, IR reflectance sensors, KiCad schematic and board layout.</div>
+        <div class="terminal-line">Result: stable course following, low latency steering, and robust field testing with school teams.</div>
+      </section>
+
+      <a class="return-link" href="index.html">← return to portfolio</a>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Project details for IoT Weather Station." />
+  <title>IoT Weather Station | Sandxwich</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="terminal-shell">
+    <header class="topbar">
+      <div class="terminal-title">Sandxwich OS • Project 01</div>
+      <div class="topbar-actions">
+        <nav class="nav-links" id="navLinks">
+          <a href="index.html#about">about</a>
+          <a href="index.html#projects">projects</a>
+          <a href="index.html#skills">skills</a>
+          <a href="index.html#contact">contact</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀️</button>
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+      </div>
+    </header>
+
+    <main class="terminal-body">
+      <div class="terminal-line command-line">
+        <span class="prompt">user@sandxwich:~/projects/iot$</span>
+        <span class="typed">cat README.md</span>
+      </div>
+      <div class="terminal-output">
+        <p>IoT Weather Station — ESP32-based climate logger with dashboard telemetry and hardware detail preview.</p>
+      </div>
+
+      <section class="terminal-block">
+        <div class="terminal-block-title">summary</div>
+        <div class="terminal-line">A weather station that collects temperature, humidity, and pressure data from sensors and publishes live values to a web dashboard.</div>
+        <div class="terminal-line">I handled embedded firmware, cloud integration, and the overall PCB hardware layout.</div>
+      </section>
+
+      <section class="terminal-block">
+        <div class="terminal-block-title">hardware preview</div>
+        <div class="hardware-preview">
+          <div class="board">
+            <div class="component">ESP32</div>
+            <div class="component">Temp / Humidity</div>
+            <div class="component">Pressure</div>
+            <div class="component">USB Power</div>
+            <div class="component">Sensor Headers</div>
+            <div class="component">Antenna</div>
+            <div class="component">Battery</div>
+            <div class="component">Status LEDs</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="terminal-block">
+        <div class="terminal-block-title">details</div>
+        <div class="terminal-line">Role: embedded firmware, hardware validation, and dashboard integration.</div>
+        <div class="terminal-line">Tech: ESP32, Arduino C++, MQTT, HTML/CSS dashboard, KiCad PCB layout.</div>
+        <div class="terminal-line">Result: real-time monitoring, remote alerts, and clean data visualization for team demos.</div>
+      </section>
+
+      <a class="return-link" href="index.html">← return to portfolio</a>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -14,7 +14,6 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: deployment
 
     steps:
       - name: Checkout repository
@@ -34,7 +33,7 @@ jobs:
             . site/
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: site
 

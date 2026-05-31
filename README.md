@@ -16,6 +16,17 @@ This repository contains a modern personal CV website built to showcase software
    - In the `Pages` section, select the `main` branch and `/ (root)` folder.
    - Save and wait for the site URL to appear.
 
+## Try Changes Locally
+
+You can preview changes locally before deploying, with no extra runner cost.
+
+- Open `index.html` directly in your browser for a quick static preview.
+- For a more accurate local test, run a simple local server:
+  - If you have Python installed, run `python -m http.server 8000` in this folder, then open `http://127.0.0.1:8000`.
+  - Or use a VS Code extension like Live Server and click `Go Live`.
+
+This lets you test HTML, CSS, and JavaScript changes locally before pushing to GitHub.
+
 ## Customize Your Site
 
 ### Update your name and headline
@@ -26,6 +37,9 @@ This repository contains a modern personal CV website built to showcase software
 ### Add or edit projects
 - In `index.html`, update the cards in the `#projects` section.
 - Add more `<article class="project-card">` blocks as needed.
+- Each project card now opens a dedicated project folder in a new tab.
+- The folder structure is `projects/iot/index.html`, `projects/rover/index.html`, `projects/portal/index.html`, and `projects/pcb/index.html`.
+- For PCB visuals, save a 3D render export as an image file and use it in a project card.
 
 ### Change contact details
 - Replace the email and Discord values in the `#contact` section.
@@ -34,7 +48,12 @@ This repository contains a modern personal CV website built to showcase software
 ### Make it your own
 - Add a `resume.pdf` to the root and link it from the hero or contact section.
 - Replace project copy with your actual hardware and software achievements.
-- Add logos, images, or screenshots by inserting `<img>` elements inside the project cards.
+- Add logos, images, screenshots, or 3D PCB renders by inserting `<img>` elements inside the project cards.
+- Introduce each project with:
+  - the problem you solved,
+  - your specific contribution,
+  - the main tools/technologies used,
+  - and the result or impact.
 
 ## Deployment Automation
 
