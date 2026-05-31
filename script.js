@@ -1,19 +1,38 @@
-function fetchESP8266IP() {
-    fetch('http://YOUR_ESP8266_IP_ADDRESS/getip', { method: 'GET' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
-        .then(ipAddress => {
-            console.log('ESP8266 IP address:', ipAddress);
-            document.getElementById('ipAddress').innerText = ipAddress;
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
+const themeToggle = document.getElementById('themeToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+const navLinks = document.getElementById('navLinks');
+
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+  document.documentElement.classList.add('light-theme');
+  themeToggle.textContent = '☀️';
 }
 
-// Fetch the ESP8266 IP address when the page loads
-fetchESP8266IP();
+themeToggle.addEventListener('click', () => {
+  const isLight = document.documentElement.classList.toggle('light-theme');
+  themeToggle.textContent = isLight ? '☀️' : '🌙';
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+});
+
+mobileMenu.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+
+navLinks.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+  });
+});
+
+const revealElements = document.querySelectorAll('.section, .project-card, .about-card, .contact-card, .hero-copy');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.18 });
+
+revealElements.forEach((el) => observer.observe(el));
+

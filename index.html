@@ -1,34 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESP8266 IP Display</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Jonas Sandxwich personal CV website for software and hardware projects." />
+    <title>Jonas Sandxwich | Software & Hardware Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>ESP8266 IP Display</h1>
-    <p>The IP address of your ESP8266 is: <span id="ipAddress">Fetching IP...</span></p>
+    <div class="page-shell">
+        <header class="topbar">
+            <a class="brand" href="#home">Sandxwich</a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+            <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+        </header>
 
-    <script>
-        function fetchESP8266IP() {
-            fetch('http://YOUR_ESP8266_IP_ADDRESS/getip', { method: 'GET' })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.text();
-                })
-                .then(ipAddress => {
-                    console.log('ESP8266 IP address:', ipAddress);
-                    document.getElementById('ipAddress').innerText = ipAddress;
-                })
-                .catch(error => {
-                    console.error('There was a problem with the fetch operation:', error);
-                });
-        }
+        <main>
+            <section class="hero" id="home">
+                <div class="hero-copy">
+                    <p class="eyebrow">Software & Hardware Builder</p>
+                    <h1>Hi, I'm Jonas.</h1>
+                    <p class="hero-text">
+                        I design embedded devices, web apps, and student-facing systems that solve real problems.
+                        Learn how I combine firmware, cloud services, and polished UI for team-ready solutions.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#projects">See Projects</a>
+                        <a class="button button-secondary" href="#contact">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-panel">
+                    <div class="stats-card">
+                        <h2>Ready for teams</h2>
+                        <div class="stats-grid">
+                            <div><strong>7+</strong><span>Projects</span></div>
+                            <div><strong>3</strong><span>Embedded builds</span></div>
+                            <div><strong>100%</strong><span>Team feedback</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        // Fetch the ESP8266 IP address when the page loads
-        fetchESP8266IP();
-    </script>
+            <section class="section about" id="about">
+                <div class="section-heading">
+                    <span>About Me</span>
+                    <h2>Building hardware-enabled software with strong design and reliability.</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-copy">
+                        <p>
+                            I specialise in full-stack student systems and embedded hardware projects. My experience spans Arduino/ESP32 boards,
+                            sensor integration, Python scripts, APIs, and responsive web interfaces.
+                        </p>
+                        <p>
+                            I enjoy collaborating with school teams and future employers to turn prototypes into reliable products.
+                            Whether it's automating a lab setup or creating a polished portfolio app, I deliver performance and clarity.
+                        </p>
+                        <ul class="about-list">
+                            <li>Hardware prototypes with Arduino, ESP32, Raspberry Pi</li>
+                            <li>Responsive web platforms using HTML, CSS, JS</li>
+                            <li>API integrations, databases, and cloud-ready workflows</li>
+                        </ul>
+                    </div>
+                    <div class="about-card">
+                        <h3>Current focus</h3>
+                        <p>
+                            Building student-facing dashboard tools and embedded smart devices for collaborative projects.
+                        </p>
+                        <div class="about-meta">
+                            <div><span>Role</span><strong>Student Developer</strong></div>
+                            <div><span>Location</span><strong>Remote / School Teams</strong></div>
+                            <div><span>Availability</span><strong>Open to new opportunities</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section projects" id="projects">
+                <div class="section-heading">
+                    <span>Selected Work</span>
+                    <h2>Software and hardware projects that demonstrate practical value.</h2>
+                </div>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <div class="project-tag">Hardware + Web</div>
+                        <h3>IoT Weather Station</h3>
+                        <p>ESP32 sensor network with live dashboard showing temperature, humidity, and environmental trends.</p>
+                        <ul>
+                            <li>Wi-Fi telemetry to dashboard</li>
+                            <li>Responsive data charts</li>
+                            <li>Weather alert triggers</li>
+                        </ul>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-tag">Autonomous Robot</div>
+                        <h3>Line-Following Rover</h3>
+                        <p>Wheel-based robot using IR sensors and PID control to navigate a course with speed and accuracy.</p>
+                        <ul>
+                            <li>Real-time motor control</li>
+                            <li>Robust line detection</li>
+                            <li>Modular platform design</li>
+                        </ul>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-tag">Team System</div>
+                        <h3>Study Group Portal</h3>
+                        <p>Student portal for project tracking, group chats, and shared resources built with JavaScript and CSS.</p>
+                        <ul>
+                            <li>Project cards and notes</li>
+                            <li>Responsive mobile-first UI</li>
+                            <li>Easy team onboarding</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section skills" id="skills">
+                <div class="section-heading">
+                    <span>Skills</span>
+                    <h2>Tools and technologies I use every day.</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-pill">HTML & CSS</div>
+                    <div class="skill-pill">JavaScript</div>
+                    <div class="skill-pill">Arduino / ESP32</div>
+                    <div class="skill-pill">Python</div>
+                    <div class="skill-pill">Git / GitHub</div>
+                    <div class="skill-pill">Responsive Design</div>
+                    <div class="skill-pill">API Integration</div>
+                    <div class="skill-pill">UI/UX</div>
+                </div>
+            </section>
+
+            <section class="section contact" id="contact">
+                <div class="section-heading">
+                    <span>Contact</span>
+                    <h2>Let's connect for your next software or hardware challenge.</h2>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h3>Work with me</h3>
+                        <p>
+                            I am available for school collaborations and early-career roles.
+                            I can help with both prototype electronics and polished web applications.
+                        </p>
+                        <div class="contact-meta">
+                            <div><strong>Email</strong><span>hello@sandxwich.dev</span></div>
+                            <div><strong>Discord</strong><span>Sandxwich#1234</span></div>
+                        </div>
+                    </div>
+                    <form class="contact-form" action="https://formspree.io/f/maylnjlr" method="POST">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" placeholder="Your name" required />
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="you@example.com" required />
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Tell me about your project" required></textarea>
+                        <button type="submit" class="button button-primary">Send Message</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Designed for school teams and employers. Built with HTML, CSS, and JavaScript.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
