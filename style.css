@@ -88,7 +88,6 @@ textarea {
   color: #d3ffda;
 }
 
-.theme-toggle,
 .mobile-menu {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -137,6 +136,39 @@ textarea {
   border: 1px dashed rgba(112, 255, 163, 0.18);
   border-radius: 22px;
   background: rgba(11, 25, 17, 0.88);
+}
+
+.ascii-animation pre {
+  margin: 0;
+  color: #c9ffd4;
+  font-family: 'Courier New', Courier, monospace;
+  white-space: pre;
+  line-height: 1.35;
+  letter-spacing: 0.03em;
+  min-height: 112px;
+  padding: 12px 14px;
+  background: rgba(7, 18, 11, 0.9);
+  border: 1px solid rgba(112, 255, 163, 0.12);
+  border-radius: 14px;
+  display: block;
+  width: 100%;
+}
+
+.ascii-debug {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: rgba(5, 12, 8, 0.94);
+  border: 1px solid rgba(112, 255, 163, 0.12);
+  border-radius: 14px;
+  color: #a7f3c4;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  min-height: 24px;
+}
+
+.terminal-output {
+  padding-left: 188px;
+  color: #c9ffd4;
 }
 
 .terminal-block-title {

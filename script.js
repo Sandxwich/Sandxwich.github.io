@@ -1,20 +1,5 @@
-const themeToggle = document.getElementById('themeToggle');
 const mobileMenu = document.getElementById('mobileMenu');
 const navLinks = document.getElementById('navLinks');
-
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'light' && themeToggle) {
-  document.documentElement.classList.add('light-theme');
-  themeToggle.textContent = '☀️';
-}
-
-if (themeToggle) {
-  themeToggle.addEventListener('click', () => {
-    const isLight = document.documentElement.classList.toggle('light-theme');
-    themeToggle.textContent = isLight ? '☀️' : '🌙';
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
-  });
-}
 
 if (mobileMenu && navLinks) {
   mobileMenu.addEventListener('click', () => {
