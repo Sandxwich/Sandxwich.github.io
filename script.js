@@ -15,6 +15,17 @@ if (navLinks) {
   });
 }
 
+const projectLinks = document.querySelectorAll('.project-card[href]');
+projectLinks.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+      return;
+    }
+    event.preventDefault();
+    window.location.href = link.href;
+  });
+});
+
 const revealElements = document.querySelectorAll('.section, .project-card, .about-card, .contact-card, .hero-copy, .terminal-block');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
