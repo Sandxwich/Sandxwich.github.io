@@ -25,7 +25,7 @@
   setInterval(() => {
     frameIndex = (frameIndex + 1) % frames.length;
     asciiAnimationEl.textContent = frames[frameIndex];
-  }, 320);
+  }, 160);
 }
 
 async function loadAsciiFramesFromFile(path) {
