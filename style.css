@@ -105,9 +105,6 @@ textarea {
   border-radius: 999px;
   padding: 10px 14px;
   cursor: pointer;
-}
-
-.mobile-menu {
   display: none;
 }
 
@@ -174,11 +171,6 @@ textarea {
   font-size: 0.9rem;
   line-height: 1.5;
   min-height: 24px;
-}
-
-.terminal-output {
-  padding-left: 188px;
-  color: #c9ffd4;
 }
 
 .terminal-block-title {
@@ -353,14 +345,25 @@ textarea {
     align-items: stretch;
   }
 
-  .nav-links {
-    width: 100%;
+  .topbar-actions {
     justify-content: space-between;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 0 4px;
+  }
+
+  .nav-links.open {
     display: flex;
   }
 
   .mobile-menu {
     display: inline-flex;
+    align-self: flex-end;
   }
 
   .terminal-output {
@@ -382,4 +385,3 @@ textarea {
     scroll-behavior: auto !important;
   }
 }
-

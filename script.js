@@ -2,39 +2,18 @@ const mobileMenu = document.getElementById('mobileMenu');
 const navLinks = document.getElementById('navLinks');
 
 if (mobileMenu && navLinks) {
-  mobileMenu.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
-}
+  mobileMenu.setAttribute('aria-expanded', 'false');
+  mobileMenu.setAttribute('aria-controls', navLinks.id);
 
-if (navLinks) {
+  mobileMenu.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    mobileMenu.setAttribute('aria-expanded', String(isOpen));
+  });
+
   navLinks.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('open');
+      mobileMenu.setAttribute('aria-expanded', 'false');
     });
   });
 }
-
-const projectLinks = document.querySelectorAll('.project-card[href]');
-projectLinks.forEach((link) => {
-  link.addEventListener('click', (event) => {
-    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
-      return;
-    }
-    event.preventDefault();
-    window.location.href = link.href;
-  });
-});
-
-const revealElements = document.querySelectorAll('.section, .project-card, .about-card, .contact-card, .hero-copy, .terminal-block');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('revealed');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.18 });
-
-revealElements.forEach((el) => observer.observe(el));
-

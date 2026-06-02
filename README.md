@@ -1,59 +1,47 @@
 # Sandxwich Portfolio Website
 
-This repository contains a modern personal CV website built to showcase software and hardware projects for school teams and future employers.
+A static, CLI-themed personal portfolio that showcases embedded hardware, firmware, and PCB projects.
 
-## Files
+## Structure
 
-- `index.html` — main website layout and content.
-- `style.css` — modern responsive styling and theme support.
-- `script.js` — theme toggle, mobile nav, and simple reveal animations.
+- `index.html` — landing page with about, projects, skills, and contact sections.
+- `style.css` — terminal/CLI theme, responsive layout, reduced-motion support.
+- `script.js` — mobile navigation toggle.
+- `animations/` — ASCII frame animation rendered on the landing page.
+  - `ascii-frames.txt` — frames separated by `---FRAME---`.
+  - `ascii.js` — frame loader and animation loop.
+- `projects/<slug>/index.html` — one page per project. Existing slugs:
+  - `FM-radio`, `iot-gateway`, `medical-thermostat`, `valentine-pcb`.
 
-## Quick Setup
+## Run Locally
 
-1. Open `index.html` in a browser.
-2. If you want the website online, host it with GitHub Pages:
-   - Go to your repository settings.
-   - In the `Pages` section, select the `main` branch and `/ (root)` folder.
-   - Save and wait for the site URL to appear.
+The site is plain static HTML/CSS/JS. Either:
 
-## Try Changes Locally
+- Open `index.html` directly in a browser, or
+- Serve it (recommended, so `fetch()` for ASCII frames works):
+  - `python -m http.server 8000` then open `http://127.0.0.1:8000`, or
+  - Use the VS Code "Live Server" extension.
 
-You can preview changes locally before deploying, with no extra runner cost.
+## Customize
 
-- Open `index.html` directly in your browser for a quick static preview.
-- For a more accurate local test, run a simple local server:
-  - If you have Python installed, run `python -m http.server 8000` in this folder, then open `http://127.0.0.1:8000`.
-  - Or use a VS Code extension like Live Server and click `Go Live`.
+### Personal copy
+Edit `index.html` — the `#about`, `#skills`, and `#contact` sections.
 
-This lets you test HTML, CSS, and JavaScript changes locally before pushing to GitHub.
+### Add a project
+1. Create `projects/<slug>/index.html`. Copy an existing project page as a template; keep relative paths as `../../style.css` and `../../script.js`.
+2. Add a card in `index.html` inside `.project-grid` linking to the new page.
 
-## Customize Your Site
-
-### Update your name and headline
-- Edit the title and hero section in `index.html`:
-  - Replace `Hi, I'm Jonas.` with your name.
-  - Change the hero description to match your personal story.
-
-### Add or edit projects
-- In `index.html`, update the cards in the `#projects` section.
-- Add more `<article class="project-card">` blocks as needed.
-- Each project card now opens a dedicated project folder in a new tab.
-- The folder structure is `projects/iot/index.html`, `projects/rover/index.html`, `projects/portal/index.html`, and `projects/pcb/index.html`.
-- For PCB visuals, save a 3D render export as an image file and use it in a project card.
-
-### Change contact details
-- Replace the email and Discord values in the `#contact` section.
-- The contact form currently uses Formspree as an example. Update `action` to your own form endpoint if needed.
+### Contact details
+Update the email and Discord values in the `#contact` section of `index.html`.
 
 ### Make it your own
-- Add a `resume.pdf` to the root and link it from the hero or contact section.
+- Add a `resume.pdf` to the root and link it from contact.
 - Replace project copy with your actual hardware and software achievements.
-- Add logos, images, screenshots, or 3D PCB renders by inserting `<img>` elements inside the project cards.
-- Introduce each project with:
-  - the problem you solved,
-  - your specific contribution,
-  - the main tools/technologies used,
-  - and the result or impact.
+- Add logos, images, screenshots, or 3D PCB renders inside project pages with `<img class="project-image" ...>`.
+- Introduce each project with the problem, your contribution, the tools used, and the result.
+
+### Update the ASCII animation
+Edit `animations/ascii-frames.txt`. Separate frames with a line containing exactly `---FRAME---`. The animation respects `prefers-reduced-motion`.
 
 ## Deployment Automation
 
